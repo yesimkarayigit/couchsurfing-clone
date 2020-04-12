@@ -1,0 +1,20 @@
+{
+  "name": "clone-project",
+  "version": "1.0.0",
+  "description": "couchsurfing clone project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node indx.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yesimkarayigit/couchsurfing-clone.git"
+  },
+  "author": "Yesim Karayigit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yesimkarayigit/couchsurfing-clone/issues"
+  },
+  "homepage": "https://github.com/yesimkarayigit/couchsurfing-clone#readme"
+}
