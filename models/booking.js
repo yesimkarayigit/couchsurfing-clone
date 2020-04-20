@@ -1,5 +1,5 @@
 class Booking {
-  constructor(surfer, host, origin) {
+  constructor(host, surfer, origin) {
     this.surfer = surfer
     this.host = host
     this.origin = origin

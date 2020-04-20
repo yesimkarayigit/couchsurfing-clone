@@ -10,8 +10,8 @@ class Surfer {
     this.bookings = bookings
   }
 
-  book(driver, origin) {
-    const booking = new Booking(driver, this, origin)
+  book(host, origin) {
+    const booking = new Booking(host, this, origin)
 
     this.bookings.push(booking)
 

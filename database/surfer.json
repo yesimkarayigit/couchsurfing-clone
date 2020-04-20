@@ -1,0 +1,69 @@
+[[
+  "1",
+  "2",
+  "3"
+],{
+  "id": "4",
+  "name": "5",
+  "location": "6",
+  "bookings": "7"
+},{
+  "id": "8",
+  "name": "9",
+  "location": "10",
+  "bookings": "11"
+},{
+  "id": "12",
+  "name": "13",
+  "location": "14",
+  "bookings": "15"
+},"5d2a7158-f8de-4cb6-a518-18e7a6ecdefb","Armagan","Kreuzberg",[
+  "16",
+  "17",
+  "18",
+  "19"
+],"cb6eabbd-a6ae-40fb-ad59-77904bc97486","Mert","Mitte",[
+  "20"
+],"3fd28576-9ebc-4061-834b-404a58b56a4c","Betul","Tegel",[
+  "21"
+],{
+  "surfer": "22",
+  "host": "23",
+  "origin": "6"
+},{
+  "surfer": "22",
+  "host": "23",
+  "origin": "24"
+},{
+  "surfer": "22",
+  "host": "23",
+  "origin": "10"
+},{
+  "surfer": "22",
+  "host": "23",
+  "origin": "6"
+},{
+  "surfer": "25",
+  "host": "23",
+  "origin": "10"
+},{
+  "surfer": "3",
+  "host": "26",
+  "origin": "6"
+},{
+  "id": "4",
+  "name": "5",
+  "location": "6",
+  "bookings": "7"
+},{
+  "name": "27",
+  "location": "28"
+},"Neukolln",{
+  "id": "8",
+  "name": "9",
+  "location": "10",
+  "bookings": "11"
+},{
+  "name": "27",
+  "location": "28"
+},"Stefan","Treptower Park"]
