@@ -1,0 +1,13 @@
+extends layout
+block content
+
+  h2 Surfer Detail
+  p #{surfer.name}
+
+  h3 Booking History
+  if surfer.bookings.length
+    ul
+      each booking in surfer.bookings
+        li #{booking.origin} and #{booking.duration}
+  else 
+    p No bookings

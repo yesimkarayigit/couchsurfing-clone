@@ -1,0 +1,10 @@
+extends layout
+block content
+
+  h2 Surfers
+  p The #{surfers.length} surfers here
+
+  ul
+    each surfer in surfers
+      li
+        a(href=`/surfers/${surfer.id}`) #{surfer.name}

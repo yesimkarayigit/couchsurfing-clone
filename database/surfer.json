@@ -1,6 +1,7 @@
 [[
   "1",
-  "2"
+  "2",
+  null
 ],{
   "id": "3",
   "name": "4",
@@ -28,19 +29,23 @@
   "surfer": "20",
   "origin": "15"
 },{
-  "surfer": "1",
+  "surfer": "21",
   "origin": "15"
 },{
   "id": "3",
   "name": "4",
   "bookings": "5"
 },{
-  "name": "21",
+  "name": "22",
   "location": "15"
 },"Leipzig","3 days",{
-  "name": "22",
+  "name": "23",
   "location": "18"
 },"Berlin","2 days",{
+  "id": "3",
+  "name": "4",
+  "bookings": "5"
+},{
   "id": "3",
   "name": "4",
   "bookings": "5"

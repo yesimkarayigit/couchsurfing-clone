@@ -5,9 +5,9 @@ class Booking {
     this.origin = origin
     this.duration = duration
   }
-  static create({host, surfer, duration}) {
-    return new Booking(host, surfer, duration)
-  }
+  // static create({host, surfer, origin, duration}) {
+  //   return new Booking(host, surfer, origin, duration)
+  // }
 }
 
 module.exports = Booking
