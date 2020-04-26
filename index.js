@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const surfersRouter = require('./routes/surfers')
 const hostsRouter = require('./routes/hosts')
 const indexRouter = require('./routes/index')
+require('./mongo-connection')
 
 const app = express()
 app.use(bodyParser.json())
