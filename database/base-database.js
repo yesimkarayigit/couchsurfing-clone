@@ -28,7 +28,7 @@ class BaseDatabase {
   }
 
   async findBy(property, value) {
-    return this.model.find({ [propert]: value})
+    return this.model.find({ [property]: value})
   }
 }
 
