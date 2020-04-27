@@ -1,15 +1,24 @@
-const uuid = require('uuid')
+// const uuid = require('uuid')
 
-class Host {
-  constructor(id = uuid.v4(), name, location) {
-    this.id = id
-    this.name = name
-    this.location = location
-  }
+const mongoose = require('mongoose')
 
-  static create({id, name, location}) {
-    return new Host(id, name, location)
-  }
-}
+const HostSchema = new mongoose.Schema({
+  name: String,
+  location: String,
+})
 
-module.exports = Host
+module.exports = mongoose.model('Host', HostSchema)
+
+// class Host {
+//   constructor(id = uuid.v4(), name, location) {
+//     this.id = id
+//     this.name = name
+//     this.location = location
+//   }
+
+//   static create({id, name, location}) {
+//     return new Host(id, name, location)
+//   }
+// }
+
+// module.exports = Host

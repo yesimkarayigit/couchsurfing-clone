@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
 })
 
 router.delete('/:surferId', async ( req, res) => {
-  await surferDatabase.removeBy('id', req.params.surferId)
+  await surferDatabase.removeBy('_id', req.params.surferId)
   res.send('OK')
 })
 
@@ -38,6 +38,12 @@ router.post('/:surferId/bookings', async (req, res) => {
   await surferDatabase.update(surfer)
 
   res.send('OK')
+})
+
+router.patch('/:surferId', async (req, res) => {
+  const { surferId } = req.params
+  const { name } = req.body
+  await surferDatabase.update(surferId, { name })
 })
 
 module.exports = router

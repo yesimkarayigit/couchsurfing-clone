@@ -1,24 +1,33 @@
-const Booking = require('./booking')
-const uuid = require('uuid')
+// const Booking = require('./booking')
+// const uuid = require('uuid')
 
-class Surfer {
-  constructor(id = uuid.v4(), name, bookings = []) {
-    this.id = id
-    this.name = name
-    this.bookings = bookings
-  }
+const mongoose = require('mongoose')
 
-  book(host, origin, duration) {
-    const booking = new Booking(host, this, origin, duration)
+const SurferSchema = new mongoose.Schema({
+  name: String,
+  bookings: []
+})
 
-    this.bookings.push(booking)
+module.exports = mongoose.model('Surfer', SurferSchema)
 
-    return booking
-  }
+// class Surfer {
+//   constructor(id = uuid.v4(), name, bookings = []) {
+//     this.id = id
+//     this.name = name
+//     this.bookings = bookings
+//   }
 
-  static create({id, name, bookings}) {
-    return new Surfer(id, name, bookings)
-  }
-}
+//   book(host, origin, duration) {
+//     const booking = new Booking(host, this, origin, duration)
 
-module.exports = Surfer
+//     this.bookings.push(booking)
+
+//     return booking
+//   }
+
+//   static create({id, name, bookings}) {
+//     return new Surfer(id, name, bookings)
+//   }
+// }
+
+// module.exports = Surfer
