@@ -8,6 +8,6 @@ block content
   if surfer.bookings.length
     ul
       each booking in surfer.bookings
-        li #{booking.origin} and #{booking.duration}
+        li #{booking.location} and #{booking.duration} in #{booking.id}
   else 
     p No bookings

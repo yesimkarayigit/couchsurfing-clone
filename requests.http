@@ -1,8 +1,25 @@
 POST http://localhost:3000/surfers HTTP/1.1
 Content-Type: application/json
 
-{"name": "new client"}
+{"name": "yesim"}
 
 ### 
 GET http://localhost:3000/surfers/5ea6e9845cc7f08a563f23ed HTTP/1.1
 Content-Type: application/json
+
+
+###
+POST http://localhost:3000/hosts HTTP/1.1
+Content-Type: application/json
+
+{"name": "david", "location": "leipzig"}
+
+###
+POST http://localhost:3000/surfers/5ead93a388202951036578d7/bookings HTTP/1.1
+Content-Type: application/json
+
+{"hostId": "5ead9adda3f75058f896c52d", "location":"leipzig", "duration":"4 days"}
+
+
+
+

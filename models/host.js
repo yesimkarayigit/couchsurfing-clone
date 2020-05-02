@@ -1,24 +1,9 @@
-// const uuid = require('uuid')
-
 const mongoose = require('mongoose')
 
 const HostSchema = new mongoose.Schema({
-  name: String,
-  location: String,
+  name: { type: String, required: true, minlength: 2 },
+  age: { type: Number, required: true, min: 18 },
+  location: { type: String, required: true }
 })
 
 module.exports = mongoose.model('Host', HostSchema)
-
-// class Host {
-//   constructor(id = uuid.v4(), name, location) {
-//     this.id = id
-//     this.name = name
-//     this.location = location
-//   }
-
-//   static create({id, name, location}) {
-//     return new Host(id, name, location)
-//   }
-// }
-
-// module.exports = Host

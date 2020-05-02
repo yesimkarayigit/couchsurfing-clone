@@ -1,33 +1,15 @@
-// const Booking = require('./booking')
-// const uuid = require('uuid')
-
 const mongoose = require('mongoose')
 
 const SurferSchema = new mongoose.Schema({
-  name: String,
-  bookings: []
+  name: { type: String, required: true, minlength: 2 },
+  age: { type: Number, required: true, min: 18 },
+  bookings: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Booking',
+    autopopulate: { maxDepth: 2 }
+  }]
 })
 
+SurferSchema.plugin(require('mongoose-autopopulate'))
+
 module.exports = mongoose.model('Surfer', SurferSchema)
-
-// class Surfer {
-//   constructor(id = uuid.v4(), name, bookings = []) {
-//     this.id = id
-//     this.name = name
-//     this.bookings = bookings
-//   }
-
-//   book(host, origin, duration) {
-//     const booking = new Booking(host, this, origin, duration)
-
-//     this.bookings.push(booking)
-
-//     return booking
-//   }
-
-//   static create({id, name, bookings}) {
-//     return new Surfer(id, name, bookings)
-//   }
-// }
-
-// module.exports = Surfer

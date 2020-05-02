@@ -1,7 +1,7 @@
 const Surfer = require('./models/surfer')
 const Host = require('./models/host')
-const surferDatabase = require('./database/surfer-database')
-const hostDatabase = require('./database/host-database')
+const surferService = require('./services/surfer-services')
+const hostService = require('./services/host-services')
 
 const printBookingHistory = require('./lib/print-booking-history')
 
@@ -16,13 +16,13 @@ yesim.book(david, 'Berlin', '2 days')
 
 async function main() {
   try {
-    await surferDatabase.save([yesim])
-    await hostDatabase.save([nihal])
+    await surferService.save([yesim])
+    await hostService.save([nihal])
   
     const betul = Surfer.create({name: 'Betul'})
   
-    await surferDatabase.insert(betul)
-    const surfers = await surferDatabase.load()
+    await surferService.insert(betul)
+    const surfers = await surferService.load()
     surfers.forEach(printBookingHistory)
   } catch (e) {
     return console.log(e)

@@ -3,3 +3,8 @@ block content
 
   h2 Hosts
   p The #{hosts.length} hosts here
+
+  ul
+    each host in hosts
+      li
+        a(href=`/hosts/${host.id}`) #{host.name}

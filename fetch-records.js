@@ -1,13 +1,13 @@
-const { surferDatabase, hostDatabase } = require('./database')
+const { surferService, hostService } = require('./services')
 const printBookingHistory = require('./lib/print-booking-history')
 
 async function main() {
-  const yesim = await surferDatabase.findByName('Yesim')
-  const nihal = await hostDatabase.findByHostName('Nihal')
+  const yesim = await surferService.findByName('Yesim')
+  const nihal = await hostService.findByHostName('Nihal')
 
   yesim.book(nihal, 'Leipzig')
-  surferDatabase.update(yesim)
+  surferService.update(yesim)
   
-  console.log(await hostDatabase.findBy('location', 'Leipzig'))
+  console.log(await hostService.findBy('location', 'Leipzig'))
 }
 main()

@@ -1,27 +1,30 @@
-const { surferDatabase, hostDatabase } = require('../database')
-const flatted = require('flatted')
+const { surferService, hostService } = require('../services')
 
 const router = require('express').Router()
 
 router.get('/', async (req, res) => {
-  const surfers = await surferDatabase.load()
+  const surfers = await surferService.load()
   
   res.render('surfers', { surfers })
 })
 
-router.post('/', async (req, res) => {
-  const surfer = await surferDatabase.insert(req.body)
-  
-  res.send(surfer)
+router.post('/', async (req, res, next) => {
+  try {
+    const surfer = await surferService.insert(req.body)
+    res.send(surfer)
+  } catch(e) {
+    next(e)
+  }
 })
 
 router.delete('/:surferId', async ( req, res) => {
-  await surferDatabase.removeBy('_id', req.params.surferId)
+  await surferService.removeBy('_id', req.params.surferId)
   res.send('OK')
 })
 
 router.get('/:surferId', async (req, res) => {
-  const surfer = await surferDatabase.find(req.params.surferId)
+  const surfer = await surferService.find(req.params.surferId)
+  
   if (!surfer) return res.status(404).send('Cannot find surfer')
   res.render('surfer', { surfer })
 })
@@ -30,20 +33,15 @@ router.post('/:surferId/bookings', async (req, res) => {
   const { surferId } = req.params
   const { hostId, location, duration } = req.body
 
-  const surfer = await surferDatabase.find(surferId)
-  const host = await hostDatabase.find(hostId)
+  const booking = await surferService.book(hostId, surferId, location, duration)
 
-  surfer.book(host, location, duration)
-
-  await surferDatabase.update(surfer)
-
-  res.send('OK')
+  res.send(booking)
 })
 
 router.patch('/:surferId', async (req, res) => {
   const { surferId } = req.params
   const { name } = req.body
-  await surferDatabase.update(surferId, { name })
+  await surferService.update(surferId, { name })
 })
 
 module.exports = router
