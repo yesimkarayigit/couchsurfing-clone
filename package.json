@@ -29,10 +29,11 @@
     "flatted": "^2.0.2",
     "mongoose": "^5.9.10",
     "mongoose-autopopulate": "^0.12.2",
-    "pug": "^2.0.4",
     "uuid": "^7.0.3"
   },
   "devDependencies": {
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0"
   }
 }
