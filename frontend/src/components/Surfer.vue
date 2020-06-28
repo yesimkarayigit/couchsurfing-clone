@@ -1,0 +1,19 @@
+<script>
+export default {
+  name: "Surfer"
+};
+</script>
+
+<template lang="pug">
+  .container
+      h2 Surfer Detail
+      p #{surfer.name}
+
+      h3 Booking History
+      if surfer.bookings.length
+        ul
+          each booking in surfer.bookings
+            li #{booking.location} and #{booking.duration} in #{booking.id}
+      else 
+        p No bookings
+</template>

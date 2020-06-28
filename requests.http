@@ -1,7 +1,7 @@
 POST http://localhost:3000/surfers HTTP/1.1
 Content-Type: application/json
 
-{"name": "yesim"}
+{"name": "emre", "age": 27}
 
 ### 
 GET http://localhost:3000/surfers/5ea6e9845cc7f08a563f23ed HTTP/1.1

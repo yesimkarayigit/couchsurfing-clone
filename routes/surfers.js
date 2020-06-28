@@ -3,9 +3,11 @@ const { surferService, hostService } = require('../services')
 const router = require('express').Router()
 
 router.get('/', async (req, res) => {
-  const surfers = await surferService.load()
+  res.send(await surferService.load())
+  // const surfers = await surferService.load()
   
-  res.render('surfers', { surfers })
+  // res.send(surfers)
+  // res.render('surfers', { surfers })
 })
 
 router.post('/', async (req, res, next) => {

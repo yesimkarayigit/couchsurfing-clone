@@ -4,8 +4,9 @@ const router = require('express').Router()
 
 router.get('/', async (req, res) => {
   const hosts = await hostService.load()
-  
-  res.render('hosts', { hosts })
+
+  res.send(hosts)
+  // res.render('hosts', { hosts })
 })
 
 router.post('/', async (req, res) => {
